@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div class="container">
+    <h3>Your order</h3>
+    <ul>
+        <li th:each="tempProduct, iterStat : ${tempCart.get(seatId)}" >
+            <span th:text="'Product: ' + ${tempProduct.numeProdus}"></span>
+            <a th:href="'/remove/' + ${seatId} + '/' + ${iterStat.index}" class="btn btn-info">Remove</a>
+        </li>
+    </ul>
+    <span th:text="'Total de plata: ' + ${total}"></span>
+    <br>
+    <a th:href="'/submit/' + ${seatId}" class="btn btn-info mt-3">Submit order</a>
+    <br>
+    <a th:href="'/menu/' + ${seatId}" class="btn btn-info mt-3">Return to menu</a>
+</div>
+</body>
+</html>

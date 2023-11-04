@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>
+        Thymeleaf Demo
+    </title>
+</head>
+<body>
+<p th:each="tempProduct : ${cart}" th:text="'Product:' + *{tempProduct.numeProdus} + /n + 'Pret: ' + *{tempProduct.pretProdus}" ></p>
+
+</body>
+
+</html>
