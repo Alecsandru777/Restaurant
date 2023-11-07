@@ -112,4 +112,9 @@ public class ProductController {
         return "orders-overview";
     }
 
+    @GetMapping("/meniubs")
+    public String getMeniuBs(){
+        return "meniu-bs";
+    }
+
 }
